@@ -26,4 +26,4 @@
 
 - 1.2.4: Update filtered expression matrix and feature set output names
 
-- 1.2.4: Updated FeatureSetBuild to raise IndexError if no partial conditions are selected 
+- 1.2.5: Updated FeatureSetBuild to raise IndexError if no partial conditions are selected 
