@@ -126,8 +126,8 @@ class FeatureSetBuilder:
         uppper_feature_content = ''
         for up_feature_set_ref in up_feature_set_ref_list:
             feature_set_obj = self.ws.get_objects2({'objects':
-                                                        [{'ref':
-                                                              up_feature_set_ref}]})['data'][0]
+                                                  [{'ref':
+                                                     up_feature_set_ref}]})['data'][0]
             feature_set_data = feature_set_obj['data']
             feature_set_info = feature_set_obj['info']
 
@@ -142,8 +142,8 @@ class FeatureSetBuilder:
         lower_feature_content = ''
         for down_feature_set_ref in down_feature_set_ref_list:
             feature_set_obj = self.ws.get_objects2({'objects':
-                                                        [{'ref':
-                                                              down_feature_set_ref}]})['data'][0]
+                                                    [{'ref':
+                                                     down_feature_set_ref}]})['data'][0]
             feature_set_data = feature_set_obj['data']
             feature_set_info = feature_set_obj['info']
 
@@ -199,8 +199,8 @@ class FeatureSetBuilder:
             diff_expression_ref = set_item['ref']
 
             diff_expression_data = self.ws.get_objects2({'objects':
-                                                             [{'ref':
-                                                                   diff_expression_ref}]})['data'][0]['data']
+                                                        [{'ref':
+                                                         diff_expression_ref}]})['data'][0]['data']
 
             label_string = set_item['label']
             label_list = [x.strip() for x in label_string.split(',')]
@@ -390,7 +390,7 @@ class FeatureSetBuilder:
                 first_label = label_list[0]
                 second_label = label_list[1]
             except IndexError:
-                raise IndexError("No selected values for Partial Condition ")
+                raise IndexError('No selected values for Partial Condition')
 
             if first_label not in available_condition_labels:
                 error_msg = 'Condition: {} is not availalbe. '.format(first_label)
@@ -416,7 +416,7 @@ class FeatureSetBuilder:
         condition_label_pairs = list()
         available_condition_labels = set()
         diff_expression_set_obj = self.ws.get_objects2({'objects':
-                                                            [{'ref': diff_expression_set_ref}]
+                                                        [{'ref': diff_expression_set_ref}]
                                                         })['data'][0]
         diff_expression_set_data = diff_expression_set_obj['data']
         items = diff_expression_set_data.get('items')
